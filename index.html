@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCurrency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="currency-item input-currency">
+            <div class="currency-info">
+                <span class="currency-flag">🇪🇺</span> <!-- European Union Flag -->
+                <span class="currency-symbol">€</span>
+                <span class="currency-name">EUR</span>
+            </div>
+            <input type="number" id="eur-input" class="currency-input" data-currency="eur" value="1">
+        </div>
+
+        <div class="currency-item">
+            <div class="currency-info">
+                <span class="currency-flag">🇺🇸</span> <!-- United States Flag -->
+                <span class="currency-symbol">$</span>
+                <span class="currency-name">USD</span>
+            </div>
+            <input type="number" id="usd-input" class="currency-input" data-currency="usd">
+        </div>
+
+        <div class="currency-item">
+            <div class="currency-info">
+                <img src="bitcoin_logo.svg" alt="Bitcoin Logo" class="currency-logo">
+                <span class="currency-symbol">BTC</span>
+                <span class="currency-name">Bitcoin</span>
+            </div>
+            <input type="number" id="btc-input" class="currency-input" data-currency="btc">
+        </div>
+
+        <div class="currency-item">
+            <div class="currency-info">
+                <img src="satoshi_logo.svg" alt="Satoshi Logo" class="currency-logo">
+                <span class="currency-symbol">SAT</span>
+                <span class="currency-name">Satoshis</span>
+            </div>
+            <input type="text" id="sats-input" class="currency-input" data-currency="sats">
+        </div>
+    </div>
+    <div class="footer">
+        Powered by <a href="https://github.com/fawazahmed0/exchange-api" target="_blank">fawazahmed0/exchange-api</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
