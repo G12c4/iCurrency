@@ -60,13 +60,43 @@ currencyInputs.forEach(input => {
     input.addEventListener('input', (e) => {
         const baseCurrency = e.target.dataset.currency;
         let baseValue = e.target.value;
+
+        // For Satoshi text input, allow only digits
         if (baseCurrency === 'sats') {
-            baseValue = baseValue.replace(/,/g, '');
+            baseValue = baseValue.replace(/[^0-9]/g, '');
         }
+
         baseValue = parseFloat(baseValue);
+
+        // Don't allow negative numbers
+        if (baseValue < 0) {
+            baseValue = 0;
+            e.target.value = 0;
+        }
+
         convertCurrency(baseCurrency, baseValue);
     });
 });
 
 // Initial conversion on page load from EUR
 convertCurrency('eur', 1);
+
+// Modal functionality
+const modal = document.getElementById('poor-modal');
+const feedThePoorLink = document.getElementById('feed-the-poor');
+const closeButton = document.querySelector('.close-button');
+
+feedThePoorLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+});

@@ -14,7 +14,7 @@
                 <span class="currency-symbol">€</span>
                 <span class="currency-name">EUR</span>
             </div>
-            <input type="number" id="eur-input" class="currency-input" data-currency="eur" value="1">
+            <input type="number" min="0" id="eur-input" class="currency-input" data-currency="eur" value="1">
         </div>
 
         <div class="currency-item">
@@ -23,7 +23,7 @@
                 <span class="currency-symbol">$</span>
                 <span class="currency-name">USD</span>
             </div>
-            <input type="number" id="usd-input" class="currency-input" data-currency="usd">
+            <input type="number" min="0" id="usd-input" class="currency-input" data-currency="usd">
         </div>
 
         <div class="currency-item">
@@ -32,7 +32,7 @@
                 <span class="currency-symbol">BTC</span>
                 <span class="currency-name">Bitcoin</span>
             </div>
-            <input type="number" id="btc-input" class="currency-input" data-currency="btc">
+            <input type="number" min="0" id="btc-input" class="currency-input" data-currency="btc">
         </div>
 
         <div class="currency-item">
@@ -45,7 +45,17 @@
         </div>
     </div>
     <div class="footer">
+        <a href="#" id="feed-the-poor">Feed the poor</a><br><br>
         Powered by <a href="https://github.com/fawazahmed0/exchange-api" target="_blank">fawazahmed0/exchange-api</a>
+    </div>
+
+    <div id="poor-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="poor.png" alt="Feed the poor" class="modal-image">
+            <img src="qr.png" alt="QR Code" class="modal-image">
+            <p class="modal-address">harriedguard621@walletofsatoshi.com</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
